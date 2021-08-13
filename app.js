@@ -105,9 +105,7 @@ app.get("/prs/delete", function(req, res){
 })
 
 
-
 // *** API *** //
-
 app.route("/prs/list")
 // Fetches all pull requests
   .get(function (req, res) {
@@ -121,12 +119,10 @@ app.route("/prs/list")
   })
   // Creats a new pull request
   .post(function (req, res) {
-
     User.find({}, function (err, foundUsers) {
         if (err) {
             console.log(err);
         } else {
-            console.log(req.body.title);
             newUser = new User({
                 prNumber: foundUsers.length + 1,
                 title: req.body.title,
@@ -138,7 +134,7 @@ app.route("/prs/list")
             });
             newUser.save().then(function (err) {
                 if(!err){
-                    res.send("Success;")
+                    res.send("Success")
                 }
                 else {
                     res.send("Fail")
