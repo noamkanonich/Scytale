@@ -65,24 +65,6 @@ app.get("/prs", function (req, res) {
   });
 });
 
-
-// app.get("/prs/filter", function (req, res) {
-//     var sortedUsers = [];
-//     var j = 0;
-//     User.find({}, function (err, usersFound) {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         //   res.render("home", { users: usersFound });
-//         for(i = usersFound.length - 1; i > -1 ; i--){
-//             sortedUsers[j] = usersFound[i];
-//             j++;
-//         }
-//         res.render("home", { users: sortedUsers });
-//       }
-//     });
-// });
-
 app.post("/prs", function (req, res) {
     User.find({}, function (err, foundUsers) {
         if (err) {
