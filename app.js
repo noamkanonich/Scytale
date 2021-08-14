@@ -96,7 +96,7 @@ app.get("/prs/delete", function(req, res){
 
 
 // *** API *** //
-app.route("/prs/list")
+app.route("/prs/api")
 // Fetches all pull requests
   .get(function (req, res) {
     User.find({}, function (err, usersFound) {
