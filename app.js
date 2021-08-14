@@ -45,16 +45,6 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-app.get("/", function(req, res){
-  User.find({}, function (err, usersFound) {
-    if (err) {
-      console.log(err);
-    } else {
-        res.render("table", { users: usersFound });
-    }
-  });
-})
-
 app.get("/prs", function (req, res) {
   User.find({}, function (err, usersFound) {
     if (err) {
